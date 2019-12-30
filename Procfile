@@ -1,1 +1,1 @@
-web: gunicorn codecourseslist/codecourseslist.wsgi --log-file -
+web: cd codecourseslist/ && gunicorn codecourseslist.wsgi --log-file -
