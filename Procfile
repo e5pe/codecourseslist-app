@@ -1,1 +1,1 @@
-web: gunicorn codecourseslist.wsgi --log-file -
+web: gunicorn codecourseslist/codecourseslist.wsgi --log-file -
