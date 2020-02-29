@@ -18,7 +18,6 @@ def new_search(request):
     # We save a search into ddbb
     models.Search.objects.create(search=search)
     final_url = BASE_CRAIGSLIST_URL + "{}".format(quote_plus(search))
-    print(final_url)
     response = requests.get(final_url)
     data = response.text
     soup = BeautifulSoup(data, features='html.parser')
@@ -40,7 +39,6 @@ def new_search(request):
                 if len(ids) >= 1:
                     id_image = ids.split(',')[0][2:]
                     post_image_url = BASE_IMAGE_URL.format(id_image)
-                    print(post_image_url)
             else:
                 post_image_url = 'https://craigslist.org/images/peace.jpg'
             final_results.append({
